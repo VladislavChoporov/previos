@@ -1,14 +1,11 @@
-def calculate_commission(order_value, config):
+def calculate_commission(volume: float, rate: float = 0.005) -> float:
     """
-    Рассчитывает комиссию для ордера.
-    order_value: суммарная стоимость ордера.
-    config: словарь с параметрами комиссии (например, rate и fixed).
+    Рассчитывает комиссию за сделку.
+    :param volume: Объем сделки.
+    :param rate: Ставка комиссии (по умолчанию 0.1%).
+    :return: Сумма комиссии.
     """
-    rate = config.get("rate", 0.0)
-    fixed = config.get("fixed", 0.0)
-    commission = order_value * rate + fixed
-    commission = round(commission, 2)
-    return max(commission, 0.01)
+    return volume * rate
 
 def apply_commission(price, quantity, instrument_category, config):
     """
@@ -24,3 +21,4 @@ def apply_commission(price, quantity, instrument_category, config):
     commission = calculate_commission(order_value, commission_config)
     net_value = order_value - commission
     return net_value, commission
+

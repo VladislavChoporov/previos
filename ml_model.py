@@ -1,7 +1,9 @@
+import pickle
 import numpy as np
 import pandas as pd
 import logging
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import joblib
@@ -9,6 +11,24 @@ import joblib
 logger = logging.getLogger("ml_model")
 
 MODEL_FILENAME = "ml_model.pkl"
+
+class MLModel:
+    def __init__(self):
+        self.model = RandomForestClassifier()
+
+    def train(self, X: pd.DataFrame, y: pd.Series):
+        self.model.fit(X, y)
+
+    def predict(self, X: pd.DataFrame):
+        return self.model.predict(X)
+
+    def save_model(self, filepath: str):
+        with open(filepath, 'wb') as f:
+            pickle.dump(self.model, f)
+
+    def load_model(self, filepath: str):
+        with open(filepath, 'rb') as f:
+            self.model = pickle.load(f)
 
 def prepare_dataset(filepath: str) -> pd.DataFrame:
     df = pd.read_csv(filepath, parse_dates=["datetime"])

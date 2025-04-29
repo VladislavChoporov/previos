@@ -5,6 +5,19 @@ from datetime import datetime, timedelta
 
 PORTFOLIO_FILE_TEMPLATE = "portfolio_{user_id}.json"
 
+class PortfolioManager:
+    def __init__(self):
+        self.positions = {}
+
+    def update_position(self, ticker: str, quantity: int):
+        self.positions[ticker] = self.positions.get(ticker, 0) + quantity
+
+    def get_position(self, ticker: str) -> int:
+        return self.positions.get(ticker, 0)
+
+    def get_all_positions(self) -> dict:
+        return self.positions
+
 def save_portfolio(user_id, portfolio):
     """Сохраняет состояние портфеля пользователя в JSON-файл."""
     filename = PORTFOLIO_FILE_TEMPLATE.format(user_id=user_id)

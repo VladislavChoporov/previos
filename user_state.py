@@ -20,6 +20,7 @@ class UserState:
         self.open_time: Optional[datetime] = None  # Время открытия позиции
         self.instrument_info: Dict[str, float] = {"lot": 1.0}  # Например: {"lot": 1.0}
         self.client = None
+        self.logger = None
 
     def set_position(self, direction: str, entry_price: float) -> None:
         """
@@ -54,3 +55,9 @@ class UserState:
             amount (float): Сумма для добавления или вычитания.
         """
         self.balance += amount
+
+    def update_position(self, ticker: str, quantity: int):
+        self.positions[ticker] = self.positions.get(ticker, 0) + quantity
+
+    def get_position(self, ticker: str) -> int:
+        return self.positions.get(ticker, 0)
