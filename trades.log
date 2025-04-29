@@ -1,0 +1,645 @@
+2025-04-09 22:49:40,616 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 22:51:56,685 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 22:59:48,267 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 22:59:48,268 - main - ERROR - 🔥 Ошибка по ('message_id', 4252): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,275 - main - ERROR - 🔥 Ошибка по ('date', datetime.datetime(2025, 4, 9, 19, 59, 47, tzinfo=TzInfo(UTC))): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,278 - main - ERROR - 🔥 Ошибка по ('chat', Chat(id=279449556, type='private', title=None, username='vladislavchoporov', first_name='Владислав', last_name='Чопоров', is_forum=None, accent_color_id=None, active_usernames=None, available_reactions=None, background_custom_emoji_id=None, bio=None, birthdate=None, business_intro=None, business_location=None, business_opening_hours=None, can_set_sticker_set=None, custom_emoji_sticker_set_name=None, description=None, emoji_status_custom_emoji_id=None, emoji_status_expiration_date=None, has_aggressive_anti_spam_enabled=None, has_hidden_members=None, has_private_forwards=None, has_protected_content=None, has_restricted_voice_and_video_messages=None, has_visible_history=None, invite_link=None, join_by_request=None, join_to_send_messages=None, linked_chat_id=None, location=None, message_auto_delete_time=None, permissions=None, personal_chat=None, photo=None, pinned_message=None, profile_accent_color_id=None, profile_background_custom_emoji_id=None, slow_mode_delay=None, sticker_set_name=None, unrestrict_boost_count=None)): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,281 - main - ERROR - 🔥 Ошибка по ('message_thread_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,283 - main - ERROR - 🔥 Ошибка по ('from_user', User(id=279449556, is_bot=False, first_name='Владислав', last_name='Чопоров', username='vladislavchoporov', language_code='ru', is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None)): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,285 - main - ERROR - 🔥 Ошибка по ('sender_chat', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,288 - main - ERROR - 🔥 Ошибка по ('sender_boost_count', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,298 - main - ERROR - 🔥 Ошибка по ('sender_business_bot', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,301 - main - ERROR - 🔥 Ошибка по ('business_connection_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,305 - main - ERROR - 🔥 Ошибка по ('forward_origin', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,312 - main - ERROR - 🔥 Ошибка по ('is_topic_message', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,328 - main - ERROR - 🔥 Ошибка по ('is_automatic_forward', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,332 - main - ERROR - 🔥 Ошибка по ('reply_to_message', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,341 - main - ERROR - 🔥 Ошибка по ('external_reply', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,349 - main - ERROR - 🔥 Ошибка по ('quote', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,351 - main - ERROR - 🔥 Ошибка по ('reply_to_story', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,353 - main - ERROR - 🔥 Ошибка по ('via_bot', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,355 - main - ERROR - 🔥 Ошибка по ('edit_date', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,357 - main - ERROR - 🔥 Ошибка по ('has_protected_content', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,359 - main - ERROR - 🔥 Ошибка по ('is_from_offline', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,362 - main - ERROR - 🔥 Ошибка по ('media_group_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,365 - main - ERROR - 🔥 Ошибка по ('author_signature', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,370 - main - ERROR - 🔥 Ошибка по ('text', 'Авто-трейдинг'): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,374 - main - ERROR - 🔥 Ошибка по ('entities', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,376 - main - ERROR - 🔥 Ошибка по ('link_preview_options', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,378 - main - ERROR - 🔥 Ошибка по ('effect_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,380 - main - ERROR - 🔥 Ошибка по ('animation', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,382 - main - ERROR - 🔥 Ошибка по ('audio', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,384 - main - ERROR - 🔥 Ошибка по ('document', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,386 - main - ERROR - 🔥 Ошибка по ('paid_media', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,387 - main - ERROR - 🔥 Ошибка по ('photo', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,389 - main - ERROR - 🔥 Ошибка по ('sticker', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,390 - main - ERROR - 🔥 Ошибка по ('story', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,392 - main - ERROR - 🔥 Ошибка по ('video', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,394 - main - ERROR - 🔥 Ошибка по ('video_note', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,396 - main - ERROR - 🔥 Ошибка по ('voice', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,398 - main - ERROR - 🔥 Ошибка по ('caption', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,399 - main - ERROR - 🔥 Ошибка по ('caption_entities', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,401 - main - ERROR - 🔥 Ошибка по ('show_caption_above_media', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,403 - main - ERROR - 🔥 Ошибка по ('has_media_spoiler', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,405 - main - ERROR - 🔥 Ошибка по ('contact', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,407 - main - ERROR - 🔥 Ошибка по ('dice', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,409 - main - ERROR - 🔥 Ошибка по ('game', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,411 - main - ERROR - 🔥 Ошибка по ('poll', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,413 - main - ERROR - 🔥 Ошибка по ('venue', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,415 - main - ERROR - 🔥 Ошибка по ('location', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,417 - main - ERROR - 🔥 Ошибка по ('new_chat_members', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,418 - main - ERROR - 🔥 Ошибка по ('left_chat_member', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,420 - main - ERROR - 🔥 Ошибка по ('new_chat_title', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,422 - main - ERROR - 🔥 Ошибка по ('new_chat_photo', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,423 - main - ERROR - 🔥 Ошибка по ('delete_chat_photo', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,424 - main - ERROR - 🔥 Ошибка по ('group_chat_created', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,426 - main - ERROR - 🔥 Ошибка по ('supergroup_chat_created', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,428 - main - ERROR - 🔥 Ошибка по ('channel_chat_created', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,431 - main - ERROR - 🔥 Ошибка по ('message_auto_delete_timer_changed', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,432 - main - ERROR - 🔥 Ошибка по ('migrate_to_chat_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,434 - main - ERROR - 🔥 Ошибка по ('migrate_from_chat_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,436 - main - ERROR - 🔥 Ошибка по ('pinned_message', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,437 - main - ERROR - 🔥 Ошибка по ('invoice', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,439 - main - ERROR - 🔥 Ошибка по ('successful_payment', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,441 - main - ERROR - 🔥 Ошибка по ('refunded_payment', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,442 - main - ERROR - 🔥 Ошибка по ('users_shared', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,444 - main - ERROR - 🔥 Ошибка по ('chat_shared', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,446 - main - ERROR - 🔥 Ошибка по ('connected_website', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,448 - main - ERROR - 🔥 Ошибка по ('write_access_allowed', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,450 - main - ERROR - 🔥 Ошибка по ('passport_data', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,451 - main - ERROR - 🔥 Ошибка по ('proximity_alert_triggered', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,453 - main - ERROR - 🔥 Ошибка по ('boost_added', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,455 - main - ERROR - 🔥 Ошибка по ('chat_background_set', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,456 - main - ERROR - 🔥 Ошибка по ('forum_topic_created', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,457 - main - ERROR - 🔥 Ошибка по ('forum_topic_edited', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,459 - main - ERROR - 🔥 Ошибка по ('forum_topic_closed', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,461 - main - ERROR - 🔥 Ошибка по ('forum_topic_reopened', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,463 - main - ERROR - 🔥 Ошибка по ('general_forum_topic_hidden', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,465 - main - ERROR - 🔥 Ошибка по ('general_forum_topic_unhidden', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,466 - main - ERROR - 🔥 Ошибка по ('giveaway_created', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,468 - main - ERROR - 🔥 Ошибка по ('giveaway', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,469 - main - ERROR - 🔥 Ошибка по ('giveaway_winners', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,471 - main - ERROR - 🔥 Ошибка по ('giveaway_completed', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,472 - main - ERROR - 🔥 Ошибка по ('video_chat_scheduled', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,474 - main - ERROR - 🔥 Ошибка по ('video_chat_started', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,475 - main - ERROR - 🔥 Ошибка по ('video_chat_ended', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,478 - main - ERROR - 🔥 Ошибка по ('video_chat_participants_invited', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,480 - main - ERROR - 🔥 Ошибка по ('web_app_data', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,481 - main - ERROR - 🔥 Ошибка по ('reply_markup', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,483 - main - ERROR - 🔥 Ошибка по ('forward_date', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,485 - main - ERROR - 🔥 Ошибка по ('forward_from', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,486 - main - ERROR - 🔥 Ошибка по ('forward_from_chat', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,488 - main - ERROR - 🔥 Ошибка по ('forward_from_message_id', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,490 - main - ERROR - 🔥 Ошибка по ('forward_sender_name', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,491 - main - ERROR - 🔥 Ошибка по ('forward_signature', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 22:59:48,493 - main - ERROR - 🔥 Ошибка по ('user_shared', None): object of type 'coroutine' has no len()
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Рабочий стол\TradeBot\main.py", line 119, in trading_loop
+    if not candles or len(candles) < 10:
+                      ~~~^^^^^^^^^
+TypeError: object of type 'coroutine' has no len()
+2025-04-09 23:00:00,589 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 23:05:13,235 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:06:18,423 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 23:13:02,971 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:13:58,163 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 23:18:32,477 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:22:59,735 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 23:23:22,385 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:24:13,394 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:24:52,730 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-09 23:25:22,264 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:33:34,701 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:33:53,486 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-09 23:34:34,984 - main - INFO - Остановка бота по запросу пользователя.
+2025-04-10 22:49:48,361 - main - INFO - 📩 Получена команда /autotrade
+2025-04-10 22:50:31,687 - main - INFO - 📩 Получена команда /autotrade
+2025-04-10 22:53:57,209 - main - INFO - 📩 Получена команда /autotrade
+2025-04-10 22:55:04,850 - main - INFO - 📩 Получена команда /autotrade
+2025-04-10 22:56:23,471 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 09:37:54,342 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 09:59:42,935 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 09:59:45,934 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 09:59:48,939 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 09:59:51,946 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 09:59:54,956 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 09:59:57,959 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 10:00:00,970 - main - ERROR - Ошибка в торговом цикле: Ошибка получения инструментов: 'UserState' object has no attribute 'client'
+2025-04-11 10:03:14,365 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 10:05:58,172 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 10:05:59,132 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-11 11:07:28,300 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 11:07:29,091 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-11 11:11:01,358 - main - INFO - 📩 Получена команда /autotrade
+2025-04-11 11:11:02,036 - main - INFO - 🚀 trading_loop стартовал!
+2025-04-11 12:23:30,642 - main - INFO - Получение списка инструментов...
+2025-04-11 12:23:30,643 - main - ERROR - Ошибка получения инструментов: 'AsyncClient' object has no attribute 'instruments'
+2025-04-11 12:36:33,020 - main - INFO - Получение списка инструментов...
+2025-04-11 12:36:36,353 - main - INFO - Получено 1971 инструментов.
+2025-04-11 13:05:47,624 - main - INFO - Получение списка инструментов...
+2025-04-11 13:05:50,554 - main - INFO - Получено 1971 инструментов.
+2025-04-11 13:09:22,528 - main - INFO - Получение списка инструментов...
+2025-04-11 13:09:29,270 - main - INFO - Получено 1971 инструментов.
+2025-04-11 14:23:03,587 - main - INFO - Получение списка инструментов...
+2025-04-11 14:23:06,443 - main - INFO - Получено 1971 инструментов.
+2025-04-11 14:35:06,378 - main - INFO - Получение списка инструментов...
+2025-04-11 14:35:10,058 - main - INFO - Получено 1971 инструментов.
+2025-04-11 14:40:14,703 - main - INFO - Получение списка инструментов...
+2025-04-11 14:40:21,012 - main - INFO - Получено 1971 инструментов.
+2025-04-11 14:43:33,171 - main - INFO - Получение списка инструментов...
+2025-04-11 14:43:35,841 - main - INFO - Получено 1971 инструментов.
+2025-04-26 14:40:41,082 - main - INFO - Получение списка инструментов...
+2025-04-26 14:40:42,627 - main - INFO - Получено 1972 инструментов.
+2025-04-26 14:41:42,640 - main - INFO - Получение списка инструментов...
+2025-04-26 14:41:44,107 - main - INFO - Получено 1972 инструментов.
+2025-04-26 14:42:44,116 - main - INFO - Получение списка инструментов...
+2025-04-26 14:42:45,678 - main - INFO - Получено 1972 инструментов.
+2025-04-28 21:37:02,824 - main - INFO - Получение списка инструментов...
+2025-04-28 21:37:04,535 - main - INFO - Получено 1972 инструментов.
+2025-04-28 21:39:30,630 - main - INFO - Получение списка инструментов...
+2025-04-28 21:39:32,205 - main - INFO - Получено 1972 инструментов.
+2025-04-28 21:51:08,752 - main - INFO - Получение списка инструментов...
+2025-04-28 21:51:10,462 - main - INFO - Получено 1972 инструментов.
+2025-04-28 21:58:18,513 - main - INFO - Получение списка инструментов...
+2025-04-28 21:58:20,086 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:01:10,282 - main - INFO - Получение списка инструментов...
+2025-04-28 22:01:12,206 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:07:48,598 - main - INFO - Получение списка инструментов...
+2025-04-28 22:07:50,266 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:11:27,271 - main - INFO - Получение списка инструментов...
+2025-04-28 22:11:28,897 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:16:00,067 - main - INFO - Получение списка инструментов...
+2025-04-28 22:16:05,223 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:17:32,515 - main - INFO - Получение списка инструментов...
+2025-04-28 22:17:34,208 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:26:20,205 - main - INFO - Получение списка инструментов...
+2025-04-28 22:26:21,880 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:29:12,048 - main - INFO - Получение списка инструментов...
+2025-04-28 22:29:13,642 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:30:58,593 - main - INFO - Получение списка инструментов...
+2025-04-28 22:31:00,223 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:33:56,196 - main - INFO - Получение списка инструментов...
+2025-04-28 22:33:58,546 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:34:16,550 - main - INFO - Получение списка инструментов...
+2025-04-28 22:34:18,165 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:46:40,073 - main - INFO - Получение списка инструментов...
+2025-04-28 22:46:41,780 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:46:41,782 - main - INFO - Отфильтровано 100 инструментов по MOEXBMI.
+2025-04-28 22:53:23,323 - main - INFO - Получение списка инструментов...
+2025-04-28 22:53:24,943 - main - INFO - Получено 1972 инструментов.
+2025-04-28 22:53:24,945 - main - INFO - Отфильтровано 100 инструментов по MOEXBMI.
