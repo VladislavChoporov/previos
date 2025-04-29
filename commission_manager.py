@@ -7,18 +7,13 @@ def calculate_commission(volume: float, rate: float = 0.005) -> float:
     """
     return volume * rate
 
-def apply_commission(price, quantity, instrument_category, config):
+def apply_commission(price, quantity, category, commission_config) -> tuple:
     """
-    Вычисляет чистую стоимость ордера после учета комиссии.
-    price: цена за единицу.
-    quantity: количество.
-    instrument_category: категория инструмента ('stocks', 'precious_metals', 'currency').
-    config: параметры комиссии из конфигурации.
-    Returns: (net_value, commission)
+    Возвращает (чистая сумма, комиссия)
     """
-    order_value = price * quantity
-    commission_config = config.get(instrument_category, config.get("default"))
-    commission = calculate_commission(order_value, commission_config)
-    net_value = order_value - commission
-    return net_value, commission
+    config = commission_config.get(category, commission_config["default"])
+    gross = price * quantity
+    commission = gross * config["rate"] + config["fixed"]
+    net = gross - commission
+    return net, commission
 

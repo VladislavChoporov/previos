@@ -18,19 +18,17 @@ class PortfolioManager:
     def get_all_positions(self) -> dict:
         return self.positions
 
-def save_portfolio(user_id, portfolio):
-    """Сохраняет состояние портфеля пользователя в JSON-файл."""
-    filename = PORTFOLIO_FILE_TEMPLATE.format(user_id=user_id)
+def save_portfolio(user_id, data):
+    filename = f"portfolio_{user_id}.json"
     with open(filename, "w", encoding="utf-8") as f:
-        json.dump(portfolio, f, indent=4)
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
 def load_portfolio(user_id):
-    """Загружает состояние портфеля пользователя из JSON-файла, если он существует."""
-    filename = PORTFOLIO_FILE_TEMPLATE.format(user_id=user_id)
-    if os.path.exists(filename):
-        with open(filename, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return None
+    filename = f"portfolio_{user_id}.json"
+    if not os.path.exists(filename):
+        return None
+    with open(filename, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 def log_trade(action: str, ticker: str, direction: str, price: float, quantity: int, reason: str):
     log_file = "trades_history.csv"
