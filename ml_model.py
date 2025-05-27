@@ -65,7 +65,7 @@ def train_model(dataset_filepath: str):
     X = df[feature_cols].values
     y = df["target"].values
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = LogisticRegression()
+    model = LogisticRegression(max_iter=1000)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
@@ -86,8 +86,14 @@ def load_model():
     return None
 
 def predict_signal(model, features: np.ndarray) -> str:
-    prediction = model.predict(features.reshape(1, -1))[0]
-    return "BUY" if prediction == 1 else "SELL"
+    if model is None:
+        raise ValueError("Модель не загружена.")
+    try:
+        prediction = model.predict(features.reshape(1, -1))
+        return "BUY" if prediction[0] == 1 else "SELL"
+    except Exception as e:
+        print(f"❌ Ошибка предсказания AI: {e}")
+        return "SKIP"
 
 # Новый функционал:
 
@@ -108,3 +114,16 @@ def analyze_trading_history(trades_file="trades_history.csv"):
     except Exception as e:
         logger.error(f"Ошибка анализа торговой истории: {e}")
         return "Анализ не выполнен."
+
+
+if __name__ == "__main__":
+    model = load_model()
+    if model:
+        import numpy as np
+        # Пример фичей: просто фиктивный набор
+        test_features = np.array([0.1, 0.05, 1200, 0.3, 60.0, 0.02, 0.15])  # 7 признаков
+        from ml_model import predict_signal
+        result = predict_signal(model, test_features)
+        print(f"✅ Модель загружена. Предсказание: {result}")
+    else:
+        print("❌ Модель не загружена")

@@ -5,10 +5,10 @@ import logging
 import signal
 import csv
 from datetime import datetime, timedelta, timezone
-from market_data import save_or_update_candles, get_market_instruments
+from market_data import save_or_update_candles
 from tinkoff.invest import AsyncClient
 from tinkoff.invest.schemas import OrderDirection, OrderType
-from market_data import get_candles, get_trade_candidates
+from market_data import get_candles
 from strategy import enhanced_strategy
 from risk_management import calculate_position_size
 from config import CONFIG
@@ -17,6 +17,8 @@ from aiogram.utils import executor
 from aiogram.dispatcher import Dispatcher
 from aiogram import executor
 from user_state import UserState
+from trade_loop import trading_loop
+from user_state import set_user_state, get_user_state
 
 # Импорт модулей для работы с Telegram
 from aiogram import Bot, Dispatcher, types, exceptions
@@ -61,7 +63,6 @@ import backtesting
 from ml_model import analyze_trading_history
 
 
-user_states = {}
 
 # Настройка логирования
 logger = logging.getLogger("main")
@@ -265,18 +266,20 @@ async def autotrade_handler(message: types.Message):
     user_id = message.from_user.id
 
     # Проверяем, есть ли пользователь в user_states, если нет — добавляем
-    if user_id not in user_states:
-        user_states[user_id] = UserState()
-        user_states[user_id].chat_id = message.chat.id
+    if not get_user_state(user_id):
+        user_state = UserState()
+        user_state.chat_id = message.chat.id
+        set_user_state(user_id, user_state)
 
-    user_state = user_states[user_id]
+    user_state = get_user_state(user_id)
+
 
     # Инициализируем клиент Tinkoff API
     if not user_state.client:
         user_state.client = await AsyncClient(TINKOFF_TOKEN).__aenter__()
 
     user_state.active = True
-    asyncio.create_task(trading_loop(message))
+    asyncio.create_task(trading_loop(user_state))
     await message.answer("🚀 Авто-трейдинг запущен!")
 
 # Обработчик команды /balance – вывод актуального баланса

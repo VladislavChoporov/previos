@@ -1,83 +1,132 @@
 import asyncio
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
-from market_data import get_candles
+from tinkoff.invest import CandleInterval
+
+from market_data import get_candles, get_figi_by_ticker
 from strategy import enhanced_strategy
+from risk_management import calc_max_qty, pnl_with_fee
+from portfolio_manager import rebalance_portfolio
 from orders import open_position, close_position
-from instruments import get_market_instruments
-from user_state import user_states
+from config import MOEXBMI_TICKERS
 
-async def trading_loop(message):
-    """
-    Основной торговый цикл.
-    """
-    user_id = message.from_user.id
-    user_state = user_states.get(user_id)
+logger = logging.getLogger("trade_loop")
+logger.setLevel(logging.INFO)
 
+
+async def load_existing_portfolio(user_state):
+    """
+    Заполняем user_state.positions & entry_prices при старте.
+    """
+    portfolio = await user_state.client.operations.get_portfolio(account_id=user_state.account_id)
+    user_state.positions = {}
+    user_state.entry_prices = {}
+    for p in portfolio.positions:
+        if p.figi and p.quantity.units != 0:
+            user_state.positions[p.figi] = p.quantity.units
+            user_state.entry_prices[p.figi] = (
+                p.average_position_price.units + p.average_position_price.nano / 1e9
+            )
+    logger.info(f"📂 Загрузили портфель: {user_state.positions}")
+
+
+async def trading_loop(user_state, sleep_sec: int = 60):
     if not user_state:
-        logger.error(f"Пользователь {user_id} не найден в user_states.")
+        logger.error("❌ user_state не передан")
         return
 
-    if not hasattr(user_state, "logger"):
-        user_state.logger = logging.getLogger(f"UserState_{user_id}")
-        user_state.logger.setLevel(logging.INFO)
+    if not getattr(user_state, "positions", None):
+        await load_existing_portfolio(user_state)
 
-    user_state.logger.info("🔄 Цикл торговли начался")
+    user_state.active = True
+    user_state.logger = logging.getLogger(f"UserState_{id(user_state)}")
+    user_state.logger.setLevel(logging.INFO)
 
     while user_state.active:
         try:
-            instruments = await get_market_instruments(user_state)
-            if not instruments:
-                user_state.logger.warning("⚠️ Нет доступных инструментов для торговли.")
-                await asyncio.sleep(60)
-                continue
+            to_dt = datetime.now(timezone.utc)
+            from_dt = to_dt - timedelta(days=7)
 
-            for instrument in instruments:
-                figi = instrument["figi"]
-                ticker = instrument["ticker"]
-                lot = instrument["lot"]
-
-                user_state.logger.info(f"🔎 Проверка актива: {ticker} ({figi})")
-
-                from_date = datetime.utcnow() - timedelta(days=30)
-                to_date = datetime.utcnow()
-                interval = "1hour"
-
-                candles = await get_candles(user_state.client, figi, from_date, to_date, interval)
-
-                if not isinstance(candles, list) or not candles or len(candles) < 10:
-                    user_state.logger.warning(f"⚠️ Некорректные или недостаточные данные по {ticker}, пропускаем.")
+            for ticker in MOEXBMI_TICKERS:
+                figi = await get_figi_by_ticker(user_state.client, ticker)
+                if not figi:
                     continue
 
-                signal = enhanced_strategy(candles)
+                candles = await get_candles(
+                    user_state.client,
+                    figi,
+                    from_dt,
+                    to_dt,
+                    CandleInterval.CANDLE_INTERVAL_HOUR,
+                )
+                if len(candles) < 20:
+                    continue
+
+                signal, score = enhanced_strategy(candles, return_score=True)
                 last_price = candles[-1]["close"]
 
-                if user_state.position and user_state.entry_price:
-                    change = (last_price - user_state.entry_price) / user_state.entry_price
-                    user_state.logger.info(f"📈 Текущая прибыль/убыток: {change:.2%}")
+                # --- P/L контроль & SL/TP ---
+                if figi in user_state.positions:
+                    pos_qty = user_state.positions[figi]
+                    dir_ = "long" if pos_qty > 0 else "short"
+                    pnl = pnl_with_fee(
+                        user_state.entry_prices[figi], last_price, abs(pos_qty), "share", dir_
+                    )
+                    pnl_pct = pnl / (abs(pos_qty) * user_state.entry_prices[figi])
 
-                    if change >= 0.05:
-                        await close_position(user_state.client, user_state, figi, "PROFIT")
-                        user_state.logger.info(f"✅ Позиция по {ticker} закрыта с прибылью.")
+                    # реверс при убытке > 0.5 %
+                    if pnl_pct <= -0.005:
+                        await close_position(user_state.client, user_state, figi, reason="REVERSAL")
+                        # открываем противоположно
+                        qty = abs(pos_qty)
+                        await open_position(
+                            user_state.client,
+                            user_state,
+                            figi,
+                            qty,
+                            "sell" if dir_ == "long" else "buy",
+                        )
                         continue
-                    elif change <= -0.02:
-                        await close_position(user_state.client, user_state, figi, "LOSS")
-                        user_state.logger.info(f"❌ Позиция по {ticker} закрыта с убытком.")
+
+                # --- open / close по сигналу ---
+                if signal == "buy":
+                    if figi in user_state.positions and user_state.positions[figi] > 0:
+                        continue  # уже лонг
+                    qty = await calc_max_qty(
+                        user_state.client,
+                        user_state.account_id,
+                        figi,
+                        last_price,
+                        score,
+                    )
+                    if qty == 0:
                         continue
+                    # если не хватает кэша — ребаланс
+                    freed = await rebalance_portfolio(user_state, last_price * qty)
+                    if freed < last_price * qty * 0.9:  # всё равно мало
+                        continue
+                    await open_position(user_state.client, user_state, figi, qty, "buy")
 
-                if signal == "buy" and not user_state.position:
-                    await open_position(user_state.client, user_state, figi, lot, "BUY")
-                    user_state.logger.info(f"📥 Открыта позиция 'buy' по {ticker}.")
+                elif signal == "sell":
+                    if figi in user_state.positions and user_state.positions[figi] < 0:
+                        continue  # уже шорт
+                    qty = await calc_max_qty(
+                        user_state.client,
+                        user_state.account_id,
+                        figi,
+                        last_price,
+                        score,
+                    )
+                    if qty == 0:
+                        continue
+                    freed = await rebalance_portfolio(user_state, last_price * qty)
+                    if freed < last_price * qty * 0.9:
+                        continue
+                    await open_position(user_state.client, user_state, figi, qty, "sell")
 
-                elif signal == "sell" and not user_state.position:
-                    await open_position(user_state.client, user_state, figi, lot, "SELL")
-                    user_state.logger.info(f"📥 Открыта позиция 'sell' по {ticker}.")
+            await asyncio.sleep(sleep_sec)
 
-            await asyncio.sleep(60)
-
-        except Exception as e:
-            user_state.logger.error(f"Ошибка в торговом цикле: {e}")
-            await asyncio.sleep(60)
-
-__all__ = ["trading_loop"]
+        except Exception as exc:
+            logger.exception(f"❌ Ошибка торгового цикла: {exc}")
+            await asyncio.sleep(sleep_sec)

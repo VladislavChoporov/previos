@@ -9,7 +9,6 @@ from utils import calculate_rsi, calculate_macd
 from loguru import logger
 
 logger = logging.getLogger("strategy")
-model = load_model()
 
 def calculate_rsi(prices: np.ndarray, period: int) -> float:
     if len(prices) < period + 1:
@@ -49,19 +48,17 @@ def enhanced_strategy(candles):
         logger.debug("❌ Мало свечей для анализа (<30)")
         return None
 
-    # Преобразуем цены в массив чисел
     close_prices = np.array([c['close'] for c in candles])
 
-    # RSI
-    rsi = calculate_rsi(close_prices, 14)
+    # === RSI
+    rsi = calculate_rsi(close_prices, CONFIG["rsi_period"])
     rsi_signal = None
-    if rsi < 30:
+    if rsi < CONFIG["rsi_oversold"]:
         rsi_signal = 'buy'
-    elif rsi > 70:
+    elif rsi > CONFIG["rsi_overbought"]:
         rsi_signal = 'sell'
-    logger.debug(f"📊 RSI: {rsi:.2f} → {rsi_signal}")
 
-    # MACD
+    # === MACD
     macd_line, signal_line, _ = calculate_macd(
         close_prices,
         CONFIG["macd_fast"],
@@ -73,19 +70,54 @@ def enhanced_strategy(candles):
         macd_signal = 'buy'
     elif macd_line < signal_line:
         macd_signal = 'sell'
-    logger.debug(f"📊 MACD: {macd_line:.2f}/{signal_line:.2f} → {macd_signal}")
 
-    # Гибкий вход: если хотя бы один даёт сигнал — входим
-    signals = [rsi_signal, macd_signal]
-    if 'buy' in signals:
-        return 'buy'
-    elif 'sell' in signals:
-        return 'sell'
-    else:
-        logger.debug("❌ Нет сигналов от стратегии")
+    if not rsi_signal and not macd_signal:
+        logger.debug("❌ Нет сигналов от RSI и MACD")
         return None
 
+    # === AI-подтверждение
+    ai_decision = None  # Объявляем заранее
+    try:
+        model = load_model()
+        if model is not None:
+            last_candle = candles[-1]
+            try:
+                print("🔍 last_candle =", last_candle)
+                print("🔍 types:", type(last_candle["close"]), type(last_candle["open"]), type(last_candle["volume"]))
+                print("🔍 rsi:", rsi, type(rsi))
+                print("🔍 macd_line:", macd_line, "signal_line:", signal_line)
 
+                features = np.array([
+                    float(last_candle["close"]) - float(last_candle["open"]),
+                    float(last_candle["high"]) - float(last_candle["low"]),
+                    float(last_candle["volume"]),
+                    float(np.mean([float(c["high"]) - float(c["low"]) for c in candles[-14:]])),
+                    float(rsi),
+                    float(macd_line - signal_line),
+                    float(last_candle["high"]) - float(last_candle["low"])
+                ])
+            except Exception as fe:
+                logger.error(f"❌ Ошибка подготовки признаков для AI модели: {fe}")
+                return None
+
+            ai_decision = predict_signal(model, features)
+            print(f"✅ ai_decision = {ai_decision}, type = {type(ai_decision)}")
+            logger.debug(f"🤖 AI модель прогнозирует: {ai_decision}")
+        else:
+            logger.warning("⚠️ Модель не загружена, AI-прогноз пропущен")
+            return None
+    except Exception as e:
+        logger.error(f"❌ Ошибка при AI-прогнозе: {e}")
+        return None
+
+    # === Совпадение сигналов
+    if isinstance(ai_decision, str) and ai_decision.upper() == 'BUY' and ('buy' in [rsi_signal, macd_signal]):
+        return 'buy'
+    elif isinstance(ai_decision, str) and ai_decision.upper() == 'SELL' and ('sell' in [rsi_signal, macd_signal]):
+        return 'sell'
+    else:
+        logger.info("🧠 AI и индикаторы не сошлись → сигнал пропущен")
+        return None
 
 # Новый функционал:
 
